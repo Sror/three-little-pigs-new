@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Story of Three Little Pigs</title>
+	<meta name="viewport" content="width=768; initial-scale=1.0;"/>
+	<link rel="stylesheet" type="text/css" href="css/book.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/animate.css"></link>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script src="js/jquery.color.js"></script>	
+	<script src="js/jQueryRotate.2.1.js"></script>
+	<script>
+		$(document).ready(function(){
+		     $('#bookTitle').animate({
+		     	width: "100%",
+			    color: "#c00",
+			    fontSize: "2.1em",
+			    borderWidth: "10px"
+			  }, 1500 );
+			  $('#bookTitle').rotate({
+			      angle:0, 
+			      animateTo:1080,
+			      easing: function (x,t,b,c,d){        // t: current time, b: begInnIng value, c: change In value, d: duration
+			          return c*(t/d)+b;
+			      } 
+			   });
+			  $('#page').fadeOut('slow', function () {
+			  	//background-image:url('img/book-cover.png')
+			  	//alert('yeaaah');
+			  	
+			  	$('#page').fadeOut(10000, function () {
+			  	
+			  		$('#page').css({ 'background-image': 'url("img/book-cover-new.png")' });
+			  		
+			  		$('#page').fadeIn(5000);
+			  			$('#page').show("scale", { percent: 1000, direction: 'horizontal' }, 80000);
+			  	});
+			  });
+    
+   			});
+	</script>
+	<style>
+		#page {background:#fff;background-image:url('img/book-cover.png');background-repeat:no-repeat;background-position: center center;}
+		#bookTitle {width:900px;text-align:center;margin:auto;-webkit-text-stroke: 3px #000;}
+	</style>
+</head>
+<body>
+	<div id="page" class="cover" style="margin-teft:250px;">
+		<!--<h1><div class="central">The Story of the Three Little Pigs</div></h1>
+		<h2>Frederick Warne &amp; Co.</h2>-->
+		<!--<img src="img/book-cover-new.png" class="central" id="mainImage" />-->
+			<h1 id="bookTitle" style="padding-top:300px;">The<br/>Three Little<br/>Pigs</h1>	
+		<div class="footer">
+		  <p>With drawings by L. Leslie Brooke</p>
+		  <img src="gfx/baker-badge.png"/>
+	  </div>
+	</div>
+</body>
+</html>
